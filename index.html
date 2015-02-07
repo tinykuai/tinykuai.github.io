@@ -4,72 +4,72 @@ title: Mainpage
 ---
 <!-- Content
     ================================================== -->
-  <div class="content">
+<div class="content">
     <main class="container">
-    	<div class="row-fluid">
-    		<section class="content">
-    		  <h1>Ipsum List</h1>
-          <div class="sub-title">A list of interesting lorem ipsums I found on the web</div>
-    		</section>
-    		<ul class="entries">
-    		{% for post in paginator.posts %}
-    		  <li>
-    		    <a href="{{ post.url }}">
-    		        <h3>{{ post.title }}</h3>
+    <div class="row-fluid">
+        <section class="content">
+            <h1> 碎碎念</h1>
+            <div class="sub-title">无非是扯扯淡</div>
+        </section>
+        <ul class="entries">
+            {% for post in paginator.posts %}
+            <li>
+            <a href="{{ post.url }}">
+                <h3>{{ post.title }}</h3>
                 <time>{{ post.date | date: "%d %B %Y" }}</time>
                 <div>{{ post.content |truncatehtml | truncatewords: 30 }}</div>
-    		    </a>
-    		  </li>
-    		{% endfor %}
-    		</ul>
-    	</div>
-      
-      <div id="post-pagination">
+            </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id="post-pagination">
         {% if paginator.previous_page %}
         <p class="prev">
-          {% if paginator.previous_page == 1 %}
-          <a href="/">Previous</a>
-          {% else %}
-          <a href="/page{{paginator.previous_page}}"> Previous</a>
-          {% endif %}
+        {% if paginator.previous_page == 1 %}
+        <a href="/">Previous</a>
+        {% else %}
+        <a href="/page{{paginator.previous_page}}"> Previous</a>
+        {% endif %}
         </p>
         {% else %}
-<!--         <p class="prev disabled">
+        <!--         <p class="prev disabled">
           <span>Previous</span>
         </p> -->
         {% endif %}
 
         <ul class="pages">
-          <li class="page">
+            <li class="page">
             {% if paginator.page == 1 %}
-<!--             <span class="current-page">1</span> -->
+            <!--             <span class="current-page">1</span> -->
             {% else %}
-<!--             <a href="/">1</a> -->
+            <!--             <a href="/">1</a> -->
             {% endif %}
-          </li>
+            </li>
 
-          {% for count in (2..paginator.total_pages) %}
-          <li class="page">
+            {% for count in (2..paginator.total_pages) %}
+            <li class="page">
             {% if count == paginator.page %}
             <span class="current-page">{{count}}</span>
             {% else %}
             <a href="/page{{count}}">{{count}}</a>
             {% endif %}
-          </li>
-          {% endfor %}
+            </li>
+            {% endfor %}
         </ul>
 
         {% if paginator.next_page %}
         <p class="next">
-          <a href="/page{{paginator.next_page}}">Next</a>
+        <a href="/page{{paginator.next_page}}">Next</a>
         </p>
         {% else %}
-<!--         <p class="next disabled">
+        <!--         <p class="next disabled">
           <span>Next</span>
         </p> -->
         {% endif %}
-      </div>
+    </div>
 
     </main>
-  </div>
+</div>
 

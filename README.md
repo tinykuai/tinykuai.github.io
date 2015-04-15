@@ -10,3 +10,4 @@ Run jekyll
 	jekyll
 
     test
+    nihao

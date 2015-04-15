@@ -8,3 +8,5 @@ Run bundle install
 Run jekyll
 
 	jekyll
+
+    test
